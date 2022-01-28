@@ -5,20 +5,29 @@
     <title>RenderFarm</title>
 </head>
 <body>
-<h1>Авторизация</h1>
+<h1>Регистрация</h1>
 <div class="form_auth_block">
     <div class="form_auth_block_content">
-        <form class="form_auth_style" action="#" method="post">
+        <form class="form_auth_style" action="/addUser" method="post">
+            <label>Введите имя:</label>
+            <input type="firstName" name="firstName" placeholder="Имя" required >
+            <br>
+            <br>
+            <label>Введите фамилию:</label>
+            <input type="lastName" name="lastName" placeholder="Фамилия" required >
+            <br>
+            <br>
             <label>Введите email:</label>
-            <input type="email" name="auth_email" placeholder="Введите Ваш имейл" required >
+            <input type="email" name="email" placeholder="email" required >
+            <br>
+            <br>
             <label>Введите пароль:</label>
-            <input type="password" name="auth_pass" placeholder="Введите пароль" required >
-            <button class="form_auth_button" type="submit" name="form_auth_submit">Войти</button>
+            <input type="password" name="password" placeholder="Пароль" required >
+            <br>
+            <br>
+            <button class="form_auth_button" type="submit" name="form_auth_submit">Зарегистрироваться</button>
         </form>
     </div>
-</div>
-<div>
-    <a th:href="'/signIn_page/'">Регистрация</a>
 </div>
 </body>
 </html>
