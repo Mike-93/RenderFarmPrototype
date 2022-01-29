@@ -4,6 +4,8 @@ import RenderFarmPrototype.model.User;
 import RenderFarmPrototype.repositories.UsersRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +27,11 @@ public class UserService {
         user.setPassword(password);
         user.setHashPassword(passwordEncoder.encode(password));
         usersRepository.save(user);
+    }
+
+    public User getAuthUser () {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = usersRepository.findByEmail(auth.getName());
+        return user;
     }
 }

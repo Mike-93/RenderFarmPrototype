@@ -5,10 +5,32 @@
     <title>RenderFarm</title>
 </head>
 <body>
-Имя - фамилия
-Текущие задачи
-id - status - Посмотреть историю изменения статусов
-Добавить задачу
+<h1>Личный кабинет</h1>
+<h2 th:text="${user.getFirstName()} + ' ' + ${user.getLastName()}"></h2>
+<div>
+    <p>Все задачи</p>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Статус</th>
+            <th></th>
+        </tr>
+        <tr th:each="element : ${taskList}">
+            <td th:text="${element.id}"></td>
+            <td th:text="${element.renderStatus}"></td>
+            <td>Посмотреть историю изменения статусов</td>
+        </tr>
+    </table>
+</div>
+<br>
+<br>
+<div>
+    <form action="/addTask" method="post">
+        <button type="submit">Создать задачу</button>
+    </form>
+</div>
+<br>
+<br>
 <a href="/logout">Выйти</a>
 </body>
 </html>

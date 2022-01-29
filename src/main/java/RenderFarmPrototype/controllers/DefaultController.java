@@ -18,12 +18,12 @@ public class DefaultController {
     }
 
     @GetMapping("/signIn")
-    public String signIn () {
+    public String signIn() {
         return "signIn_page";
     }
 
     @PostMapping("/signIn")
-    public String authentication () {
+    public String authentication() {
         return "redirect:/user_page";
     }
 }
