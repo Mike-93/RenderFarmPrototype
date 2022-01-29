@@ -8,17 +8,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class DefaultController {
 
     @GetMapping("/")
-    public String getSignUpPage() {
-        return "signIn_page";
+    public String getSignInPage() {
+        return "redirect:/signIn";
     }
 
     @GetMapping("/signUp_page")
-    public String getSignInPage() {
+    public String getSignUpPage() {
         return "signUp_page";
     }
 
-    @PostMapping("/signIn")
+    @GetMapping("/signIn")
     public String signIn () {
-        return "user_page";
+        return "signIn_page";
+    }
+
+    @PostMapping("/signIn")
+    public String authentication () {
+        return "redirect:/user_page";
     }
 }

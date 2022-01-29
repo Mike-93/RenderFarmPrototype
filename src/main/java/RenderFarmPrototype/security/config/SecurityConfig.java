@@ -24,15 +24,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
 
         http.authorizeHttpRequests()
-                .antMatchers("/signIn").authenticated()
+                .antMatchers("/").permitAll()
                 .antMatchers("/signUp_page").permitAll()
+                .antMatchers("/user_page").authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/user_page")
+                .loginPage("/signIn")
                 .usernameParameter("email")
                 .passwordParameter("password")
-                .defaultSuccessUrl("/")
-                .failureForwardUrl("/");
+                .defaultSuccessUrl("/user_page")
+                .failureForwardUrl("/signIn")
+                .and()
+                .logout()
+                .logoutSuccessUrl("/");
     }
 
     @Override

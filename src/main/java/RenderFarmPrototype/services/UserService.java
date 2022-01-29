@@ -22,7 +22,8 @@ public class UserService {
         user.setFirstName(firstName);
         user.setLastName(lastName);
         user.setEmail(email);
-        user.setPassword(passwordEncoder.encode(password));
+        user.setPassword(password);
+        user.setHashPassword(passwordEncoder.encode(password));
         usersRepository.save(user);
     }
 }
