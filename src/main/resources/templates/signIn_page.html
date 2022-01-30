@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>RenderFarm</title>
+    <meta charset="UTF-8">
+    <title>RenderFarm</title>
 </head>
 <body>
 <h1>Авторизация</h1>
 <div class="form_auth_block">
-  <div class="form_auth_block_content">
-    <form class="form_auth_style" action="/signIn" method="post">
-      <label>Введите email:</label>
-      <input type="email" name="email" placeholder="Введите email" required >
-      <br>
-      <br>
-      <label>Введите пароль:</label>
-      <input type="password" name="password" placeholder="Введите пароль" required >
-      <button class="form_auth_button" type="submit" name="form_auth_submit">Войти</button>
-    </form>
-  </div>
+    <div class="form_auth_block_content">
+        <form class="form_auth_style" action="/signIn" method="post">
+            <label>Введите email:</label>
+            <input type="email" name="email" placeholder="Введите email" required>
+            <br>
+            <br>
+            <label>Введите пароль:</label>
+            <input type="password" name="password" placeholder="Введите пароль" required>
+            <button class="form_auth_button" type="submit" name="form_auth_submit">Войти</button>
+        </form>
+    </div>
 </div>
 <br>
 <br>
 <div>
-  <a th:href="'/signUp_page'">Регистрация</a>
+    <a th:href="'/signUp_page'">Регистрация</a>
 </div>
 </body>
 </html>

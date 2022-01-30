@@ -27,6 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers("/signUp_page").permitAll()
                 .antMatchers("/user_page").authenticated()
+                .antMatchers("/showHistory/{id}").authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/signIn")

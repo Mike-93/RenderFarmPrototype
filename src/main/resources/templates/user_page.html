@@ -16,9 +16,27 @@
             <th></th>
         </tr>
         <tr th:each="element : ${taskList}">
-            <td th:text="${element.id}"></td>
-            <td th:text="${element.renderStatus}"></td>
-            <td>Посмотреть историю изменения статусов</td>
+            <td th:text="${element.getId()}"></td>
+            <td th:text="${element.getRenderStatus()}"></td>
+            <td><a th:href="'/showHistory/'+ ${element.getId()}" method="get">Посмотреть историю изменения статусов</a>
+            </td>
+        </tr>
+    </table>
+</div>
+<br>
+<br>
+<div>
+    <p>Текущие задачи</p>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Статус</th>
+            <th>Время постановки задачи</th>
+        </tr>
+        <tr th:each="element : ${currentTaskList}">
+            <td th:text="${element.getId()}"></td>
+            <td th:text="${element.getRenderStatus()}"></td>
+            <td th:text="${element.getCreateTime()}"></td>
         </tr>
     </table>
 </div>

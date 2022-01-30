@@ -19,7 +19,7 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public void addUser (String firstName, String lastName, String email, String password){
+    public void addUser(String firstName, String lastName, String email, String password) {
         User user = new User();
         user.setFirstName(firstName);
         user.setLastName(lastName);
@@ -29,9 +29,8 @@ public class UserService {
         usersRepository.save(user);
     }
 
-    public User getAuthUser () {
+    public User getAuthUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User user = usersRepository.findByEmail(auth.getName());
-        return user;
+        return usersRepository.findByEmail(auth.getName());
     }
 }

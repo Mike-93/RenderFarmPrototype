@@ -12,8 +12,8 @@ import java.util.Date;
 public class Task {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "render_status")
@@ -25,7 +25,8 @@ public class Task {
 
     @Column(name = "create_time", nullable = false)
     @NotNull
-    private Date createTime = new Date();
+    private Date createTime;
 
-
+    @Column(name = "complete_time")
+    private Date completeTime;
 }

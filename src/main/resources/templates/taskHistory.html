@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>RenderFarm</title>
+</head>
+<body>
+<h1><p th:text="${task.getId()}"></p></h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Время создания задачи</th>
+        <th>Время завершения задачи</th>
+        <th>Текущий статус</th>
+    </tr>
+    <tr>
+        <td th:text="${task.getId()}"></td>
+        <td th:text="${task.getCreateTime()}"></td>
+        <td th:text="${task.getCompleteTime()}"></td>
+        <td th:text="${task.getRenderStatus()}"></td>
+    </tr>
+</table>
+<br>
+<a href="/user_page">Назад</a>
+</body>
+</html>
