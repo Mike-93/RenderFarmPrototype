@@ -50,7 +50,7 @@ public class TaskService {
 
     private void updateStatus(Task task) {
         try {
-            Thread.sleep(5000 + (int) (Math.random() * 15000));
+            Thread.sleep(60000 + (int) (Math.random() * 300000));
         } catch (InterruptedException ie) {
             System.out.println(ie);
         }
